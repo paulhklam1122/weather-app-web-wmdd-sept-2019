@@ -74,6 +74,7 @@ class App extends Component {
   }
 
   render() {
+    const { temperature, city, country, humidity, description, minTemp, maxTemp } = this.state
     return (
       <div className='wrapper'>
         <div className='main'>
@@ -86,7 +87,15 @@ class App extends Component {
                 onInputChange={this.handleInputChange}
                 getWeather={this.getWeather}
               />
-              <Weather />
+              <Weather
+                temperature={temperature}
+                city={city}
+                country={country}
+                humidity={humidity}
+                description={description}
+                minTemp={minTemp}
+                maxTemp={maxTemp}
+              />
             </Grid>
           </Grid>
         </div>
